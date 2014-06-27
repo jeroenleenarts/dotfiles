@@ -57,6 +57,8 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+	# Use Kaleidoscope for reviewing
+	ksreview = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA; }; f"
 [apply]
 
 	# Detect whitespace errors when applying a patch
