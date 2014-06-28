@@ -1,6 +1,13 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+# Export a sensible JAVA_HOME
+JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_HOME
+
+# Export some reasonable SBT options
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
