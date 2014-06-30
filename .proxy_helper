@@ -1,0 +1,42 @@
+prox="http://proxy.com:8080"
+alias proxyon="export http_proxy=$prox && export https_proxy=$prox"
+alias proxyoff='unset http_proxy && unset https_proxy'
+export no_proxy=localhost,127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.intranet
+# echo "Turning http(s) proxies on"
+# proxyon
+ 
+# investigate function is repeated here for portability but, we
+# only define it if investigate isn't already a defined function
+if ! type -t investigate &> /dev/null; then
+  function investigate {
+    local output_prefix='' # could be something like [*]
+    local output_sep=": " # could be ", " ": " etc
+    for varname in $@; do
+      echo -n "${output_prefix}${varname}${output_sep}"
+      v='echo $'
+      v="${v}$(echo $varname)"
+      eval $v
+    done
+  }
+  export -f investigate
+fi
+ 
+# Display the state of the proxy variables
+function proxystate {
+  local HTTP="off"
+  local HTTPS="off"
+  local SOCKS="off"
+  if export | grep -q http_proxy;then
+    HTTP=$http_proxy
+  fi
+  if export | grep -q https_proxy;then
+    HTTPS=$https_proxy
+  fi
+  if export | grep -q socks_proxy;then
+    SOCKS=$socks_proxy
+  fi
+  echo "[*] Current state of proxy variables"
+  investigate HTTP HTTPS SOCKS
+}
+export -f proxystate
+proxystate
