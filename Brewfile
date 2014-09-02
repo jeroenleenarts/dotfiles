@@ -42,6 +42,10 @@ install autojump
 #install exiv2
 # install foremost
 install git
+
+# If proxy-ing is needed
+#install cntlm
+install httpie
 # install hashpump
 # install imagemagick --with-webp
 # install lynx
