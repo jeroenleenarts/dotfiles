@@ -15,7 +15,7 @@ upgrade
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 # install findutils
 # Install GNU `sed`, overwriting the built-in `sed`
-install gnu-sed --default-names
+# install gnu-sed --default-names
 # Install Bash 4
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 # install bash
@@ -61,5 +61,11 @@ install git
 
 # install homebrew/versions/lua52
 
+# Install useful tools
+install tig
+install hub
+install the_silver_searcher
+install node
+install macvim
 # Remove outdated versions from the cellar
 cleanup
