@@ -45,7 +45,6 @@ cask install cocoapacketanalyzer 2> /dev/null
 cask install appcleaner 2> /dev/null
 cask install cyberduck 2> /dev/null
 cask install github 2> /dev/null
-cask install coda 2> /dev/null
 cask install lighttable 2> /dev/null
 cask install atom 2> /dev/null
 cask install flash 2> /dev/null
