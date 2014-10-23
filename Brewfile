@@ -20,6 +20,7 @@ upgrade
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 # install bash
 install bash-completion
+install fish
 
 # Install wget with IRI support
 # install wget --enable-iri

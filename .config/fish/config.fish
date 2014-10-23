@@ -1,0 +1,1 @@
+if test -f (brew --prefix)/etc/autojump.fish; . (brew --prefix)/etc/autojump.fish; end
