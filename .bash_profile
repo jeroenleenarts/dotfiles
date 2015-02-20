@@ -8,6 +8,9 @@ export JAVA_HOME
 # Export some reasonable SBT options
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
 
+# Include brew site-packages dir into PYTHONPATH
+export PYTHONPATH=`brew --prefix`/lib/python2.7/site-packages:$PYTHONPATH
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -56,3 +59,6 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+# Add homebrew to path
+export PATH=/usr/local/bin:$PATH
