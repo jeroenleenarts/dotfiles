@@ -133,4 +133,5 @@ brew cask install github 2> /dev/null
 brew cask install lighttable 2> /dev/null
 brew cask install atom 2> /dev/null
 brew cask install flash 2> /dev/null
+brew cask install seil 2> /dev/null
 
